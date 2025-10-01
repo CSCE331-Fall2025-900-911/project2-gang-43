@@ -42,5 +42,6 @@ CREATE TABLE Employee (
 CREATE TABLE Item_Ingredient (
     Item_ID INT NOT NULL REFERENCES Item(Item_ID) ON DELETE CASCADE,
     Ingredient_ID INT NOT NULL REFERENCES Ingredient(Ingredient_ID) ON DELETE CASCADE,
+    Quantity NUMERIC(10,2) NOT NULL CHECK (Quantity > 0),
     PRIMARY KEY (Item_ID, Ingredient_ID)
 );

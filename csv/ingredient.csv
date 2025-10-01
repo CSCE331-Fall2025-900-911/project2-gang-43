@@ -1,0 +1,20 @@
+Ingredient_ID,Ingredient_Name,Stock_Quantity,Unit_Measurement,Reorder_Level
+1,Black Tea Leaves,1000,grams,200
+2,Taro Powder,500,grams,100
+3,Milk,2000,ml,500
+4,Thai Tea Leaves,500,grams,100
+5,Matcha Powder,400,grams,100
+6,Brown Sugar Syrup,1000,ml,200
+7,Honeydew Syrup,500,ml,100
+8,Mango Syrup,500,ml,100
+9,Lychee Syrup,500,ml,100
+10,Strawberry Syrup,500,ml,100
+11,Passion Fruit Syrup,500,ml,100
+12,Wintermelon Syrup,500,ml,100
+13,Coffee Syrup,500,ml,100
+14,Almond Syrup,500,ml,100
+15,Oolong Tea Leaves,400,grams,100
+16,Jasmine Tea Leaves,400,grams,100
+17,Peach Syrup,500,ml,100
+18,Boba Pearls,1000,grams,200
+19,Sugar,2000,grams,500
