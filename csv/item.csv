@@ -1,17 +1,49 @@
 Item_ID,Name,Price,Available,Size
-1,Classic Milk Tea,4.5,TRUE,medium
-2,Taro Milk Tea,4.75,TRUE,medium
-3,Thai Tea,4.75,TRUE,medium
-4,Matcha Latte,5,TRUE,medium
-5,Brown Sugar Milk Tea,5.25,TRUE,medium
-6,Honeydew Milk Tea,4.75,TRUE,medium
-7,Mango Green Tea,4.5,TRUE,medium
-8,Lychee Black Tea,4.5,TRUE,medium
-9,Strawberry Fruit Tea,4.75,TRUE,medium
-10,Passion Fruit Tea,4.75,TRUE,medium
-11,Wintermelon Tea,4.25,TRUE,medium
-12,Coffee Milk Tea,4.75,TRUE,medium
-13,Almond Milk Tea,4.75,TRUE,medium
-14,Oolong Milk Tea,4.75,TRUE,medium
-15,Jasmine Green Tea,4.25,TRUE,medium
-16,Peach Oolong Tea,4.75,TRUE,medium
+1,Classic Milk Tea,3.75,TRUE,small
+2,Classic Milk Tea,4.50,TRUE,medium
+3,Classic Milk Tea,5.25,TRUE,large
+4,Taro Milk Tea,4.00,TRUE,small
+5,Taro Milk Tea,4.75,TRUE,medium
+6,Taro Milk Tea,5.50,TRUE,large
+7,Thai Tea,4.00,TRUE,small
+8,Thai Tea,4.75,TRUE,medium
+9,Thai Tea,5.50,TRUE,large
+10,Matcha Latte,4.25,TRUE,small
+11,Matcha Latte,5.00,TRUE,medium
+12,Matcha Latte,5.75,TRUE,large
+13,Brown Sugar Milk Tea,4.50,TRUE,small
+14,Brown Sugar Milk Tea,5.25,TRUE,medium
+15,Brown Sugar Milk Tea,6.00,TRUE,large
+16,Honeydew Milk Tea,4.00,TRUE,small
+17,Honeydew Milk Tea,4.75,TRUE,medium
+18,Honeydew Milk Tea,5.50,TRUE,large
+19,Mango Green Tea,3.75,TRUE,small
+20,Mango Green Tea,4.50,TRUE,medium
+21,Mango Green Tea,5.25,TRUE,large
+22,Lychee Black Tea,3.75,TRUE,small
+23,Lychee Black Tea,4.50,TRUE,medium
+24,Lychee Black Tea,5.25,TRUE,large
+25,Strawberry Fruit Tea,4.00,TRUE,small
+26,Strawberry Fruit Tea,4.75,TRUE,medium
+27,Strawberry Fruit Tea,5.50,TRUE,large
+28,Passion Fruit Tea,4.00,TRUE,small
+29,Passion Fruit Tea,4.75,TRUE,medium
+30,Passion Fruit Tea,5.50,TRUE,large
+31,Wintermelon Tea,3.50,TRUE,small
+32,Wintermelon Tea,4.25,TRUE,medium
+33,Wintermelon Tea,5.00,TRUE,large
+34,Coffee Milk Tea,4.00,TRUE,small
+35,Coffee Milk Tea,4.75,TRUE,medium
+36,Coffee Milk Tea,5.50,TRUE,large
+37,Almond Milk Tea,4.00,TRUE,small
+38,Almond Milk Tea,4.75,TRUE,medium
+39,Almond Milk Tea,5.50,TRUE,large
+40,Oolong Milk Tea,4.00,TRUE,small
+41,Oolong Milk Tea,4.75,TRUE,medium
+42,Oolong Milk Tea,5.50,TRUE,large
+43,Jasmine Green Tea,3.50,TRUE,small
+44,Jasmine Green Tea,4.25,TRUE,medium
+45,Jasmine Green Tea,5.00,TRUE,large
+46,Peach Oolong Tea,4.00,TRUE,small
+47,Peach Oolong Tea,4.75,TRUE,medium
+48,Peach Oolong Tea,5.50,TRUE,large
