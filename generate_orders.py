@@ -4,7 +4,7 @@ import csv
 from datetime import datetime, timedelta
 
 # Read the items CSV
-items_df = pd.read_csv('/Users/anujaed/Downloads/item.csv')
+items_df = pd.read_csv('csv/item.csv')
 
 # Generate Orders CSV
 def generate_orders_csv(total_sales_target=750000, weeks=39):
@@ -36,7 +36,7 @@ def generate_orders_csv(total_sales_target=750000, weeks=39):
             break
     
     # Write to CSV
-    with open('/Users/anujaed/Downloads/orders.csv', 'w', newline='') as file:
+    with open('csv/orders.csv', 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Order_ID', 'Order_Timestamp', 'Order_Total', 'Order_Status'])
         writer.writerows(orders_data)
