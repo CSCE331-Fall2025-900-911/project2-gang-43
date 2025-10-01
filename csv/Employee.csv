@@ -1,0 +1,9 @@
+Employee_ID,Employee_Name,Role,Active
+1,Alice Johnson,Cashier,TRUE
+2,Bob Smith,Cashier,TRUE
+3,Carlos Ruiz,Cashier,TRUE
+4,Diana Lee,Manager,TRUE
+5,Emily Wong,Cashier,TRUE
+6,Frank Lin,Cashier,FALSE
+7,Grace Kim,Manager,TRUE
+8,Hector Martinez,Cashier,TRUE

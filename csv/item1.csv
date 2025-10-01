@@ -1,0 +1,17 @@
+Item_ID,Name,Price,Available,Size
+1,Classic Milk Tea,4.5,TRUE,medium
+2,Taro Milk Tea,4.75,TRUE,medium
+3,Thai Tea,4.75,TRUE,medium
+4,Matcha Latte,5,TRUE,medium
+5,Brown Sugar Milk Tea,5.25,TRUE,medium
+6,Honeydew Milk Tea,4.75,TRUE,medium
+7,Mango Green Tea,4.5,TRUE,medium
+8,Lychee Black Tea,4.5,TRUE,medium
+9,Strawberry Fruit Tea,4.75,TRUE,medium
+10,Passion Fruit Tea,4.75,TRUE,medium
+11,Wintermelon Tea,4.25,TRUE,medium
+12,Coffee Milk Tea,4.75,TRUE,medium
+13,Almond Milk Tea,4.75,TRUE,medium
+14,Oolong Milk Tea,4.75,TRUE,medium
+15,Jasmine Green Tea,4.25,TRUE,medium
+16,Peach Oolong Tea,4.75,TRUE,medium
