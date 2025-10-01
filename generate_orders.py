@@ -7,17 +7,15 @@ from datetime import datetime, timedelta
 items_df = pd.read_csv('csv/item.csv')
 
 # Generate Orders CSV
-def generate_orders_csv(total_sales_target=750000, weeks=39):
+def generate_orders_csv(total_sales_target=750000, weeks=40):
     orders_data = []
     current_sales = 0
     start_date = datetime.now() - timedelta(weeks=weeks)
     order_id = 1
 
     while current_sales < total_sales_target:
-        # Ensure order is within 39 weeks
         order_timestamp = start_date + timedelta(days=random.randint(0, weeks*7))
         
-        # Generate order with higher total to reach sales target
         order_total = round(random.uniform(50.00, 300.00), 2)
         order_status = random.choice(['pending', 'completed'])
         
@@ -80,7 +78,7 @@ def generate_order_items_csv(orders_data, items_df):
                 break
     
     # Write to CSV
-    with open('/Users/anujaed/Downloads/order_item.csv', 'w', newline='') as file:
+    with open('csv/order_item.csv', 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Order_Item_ID', 'Order_ID', 'Item_ID', 'Quantity', 'Item_Price'])
         writer.writerows(order_items_data)

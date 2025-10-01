@@ -1,47 +1,47 @@
 CREATE TYPE size_type AS ENUM ('large', 'medium', 'small');
-CREATE TABLE Item (
-    Item_ID SERIAL PRIMARY KEY,
-    Name VARCHAR NOT NULL,
-    Price NUMERIC(10,2) NOT NULL,
-    Available BOOLEAN,
-    Size size_type NOT NULL
+CREATE TABLE item (
+    item_id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    price NUMERIC(10,2) NOT NULL,
+    available BOOLEAN,
+    size size_type NOT NULL
 );
 
-CREATE TABLE Ingredient (
-    Ingredient_ID SERIAL PRIMARY KEY,
-    Ingredient_Name VARCHAR NOT NULL,
-    Stock_Quantity INTEGER NOT NULL,
-    Unit_Measurement VARCHAR NOT NULL,
-    Reorder_Level INTEGER
+CREATE TABLE ingredient (
+    ingredient_id SERIAL PRIMARY KEY,
+    ingredient_name VARCHAR NOT NULL,
+    stock_quantity INTEGER NOT NULL,
+    unit_measurement VARCHAR NOT NULL,
+    reorder_level INTEGER
 );
 
 CREATE TYPE order_status AS ENUM ('pending', 'completed');
-CREATE TABLE Orders (
-    Order_ID SERIAL PRIMARY KEY,
-    Order_Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    Order_Total NUMERIC(10,2) NOT NULL,
-    Order_Status order_status NOT NULL DEFAULT 'pending'
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    order_timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    order_total NUMERIC(10,2) NOT NULL,
+    order_status order_status NOT NULL DEFAULT 'pending'
 );
 
-CREATE TABLE Order_Item (
-    Order_ID INT NOT NULL REFERENCES Orders(Order_ID) ON DELETE CASCADE,
-    Item_ID INT NOT NULL REFERENCES Item(Item_ID) ON DELETE CASCADE,
-    Quantity INTEGER NOT NULL CHECK (Quantity > 0),
-    Item_Price NUMERIC(10,2) NOT NULL,
+CREATE TABLE order_item (
+    order_id INT NOT NULL REFERENCES Orders(Order_ID) ON DELETE CASCADE,
+    item_id INT NOT NULL REFERENCES Item(Item_ID) ON DELETE CASCADE,
+    quantity INTEGER NOT NULL CHECK (Quantity > 0),
+    item_price NUMERIC(10,2) NOT NULL,
     PRIMARY KEY (Order_ID, Item_ID)
 );
 
-CREATE TYPE employee_role AS ENUM ('Cashier', 'Manager');
-CREATE TABLE Employee (
-    Employee_ID SERIAL PRIMARY KEY,
-    Employee_Name VARCHAR NOT NULL,
-    Role employee_role NOT NULL,
-    Active BOOLEAN NOT NULL DEFAULT TRUE
+CREATE TYPE employee_role AS ENUM ('cashier', 'manager');
+CREATE TABLE employee (
+    employee_id SERIAL PRIMARY KEY,
+    employee_name VARCHAR NOT NULL,
+    role employee_role NOT NULL,
+    active BOOLEAN NOT NULL DEFAULT TRUE
 );
 
-CREATE TABLE Item_Ingredient (
-    Item_ID INT NOT NULL REFERENCES Item(Item_ID) ON DELETE CASCADE,
-    Ingredient_ID INT NOT NULL REFERENCES Ingredient(Ingredient_ID) ON DELETE CASCADE,
-    Quantity NUMERIC(10,2) NOT NULL CHECK (Quantity > 0),
+CREATE TABLE item_ingredient (
+    item_id INT NOT NULL REFERENCES Item(Item_ID) ON DELETE CASCADE,
+    ingredient_id INT NOT NULL REFERENCES Ingredient(Ingredient_ID) ON DELETE CASCADE,
+    quantity NUMERIC(10,2) NOT NULL CHECK (Quantity > 0),
     PRIMARY KEY (Item_ID, Ingredient_ID)
 );
