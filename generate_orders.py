@@ -16,10 +16,14 @@ def generate_orders_and_items_csv(total_sales_target=750000, weeks=39):
     
     while cumulative_sales < total_sales_target:
         # Generate order timestamp within 39 weeks
-        order_timestamp = start_date + timedelta(days=random.randint(0, weeks*7))
+        order_timestamp = start_date + timedelta(
+    days=random.randint(0, weeks*7),
+    hours=random.randint(0, 23),
+    minutes=random.randint(0, 59)
+)
         
         # Generate a random target for this order (right-skewed 10-300)
-        target_order_total = round(10 + (random.random() ** 2) * 290, 2)
+        target_order_total = round(10 + (random.random() ** 9) * 290, 2)
         
         # Start each order at 0
         order_total = 0
@@ -65,9 +69,6 @@ def generate_orders_and_items_csv(total_sales_target=750000, weeks=39):
         cumulative_sales += order_total
         order_id += 1
         
-        # Break if we've exceeded 39 weeks
-        if order_timestamp > start_date + timedelta(weeks=39):
-            break
     
     # Write Orders CSV
     with open('csv/orders.csv', 'w', newline='') as file:
