@@ -1,5 +1,13 @@
+    DROP TABLE order_item;
+    DROP TABLE item_ingredient;
+    DROP TABLE items;
+    DROP TABLE ingredients;
+    DROP TABLE orders;
+    DROP TABLE employees;
+    DROP TYPE employee_role, size_type;
+
 CREATE TYPE size_type AS ENUM ('large', 'medium', 'small');
-CREATE TABLE item (
+CREATE TABLE items (
     item_id SERIAL PRIMARY KEY,
     name VARCHAR NOT NULL,
     price NUMERIC(10,2) NOT NULL,
@@ -7,7 +15,7 @@ CREATE TABLE item (
     size size_type NOT NULL
 );
 
-CREATE TABLE ingredient (
+CREATE TABLE ingredients (
     ingredient_id SERIAL PRIMARY KEY,
     ingredient_name VARCHAR NOT NULL,
     stock_quantity INTEGER NOT NULL,
@@ -15,24 +23,22 @@ CREATE TABLE ingredient (
     reorder_level INTEGER
 );
 
-CREATE TYPE order_status AS ENUM ('pending', 'completed');
 CREATE TABLE orders (
     order_id SERIAL PRIMARY KEY,
     order_timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    order_total NUMERIC(10,2) NOT NULL,
-    order_status order_status NOT NULL DEFAULT 'pending'
+    order_total NUMERIC(10,2) NOT NULL
 );
 
 CREATE TABLE order_item (
     order_id INT NOT NULL REFERENCES Orders(Order_ID) ON DELETE CASCADE,
-    item_id INT NOT NULL REFERENCES Item(Item_ID) ON DELETE CASCADE,
+    item_id INT NOT NULL REFERENCES Items(Item_ID) ON DELETE CASCADE,
     quantity INTEGER NOT NULL CHECK (Quantity > 0),
     item_price NUMERIC(10,2) NOT NULL,
     PRIMARY KEY (Order_ID, Item_ID)
 );
 
 CREATE TYPE employee_role AS ENUM ('cashier', 'manager');
-CREATE TABLE employee (
+CREATE TABLE employees (
     employee_id SERIAL PRIMARY KEY,
     employee_name VARCHAR NOT NULL,
     role employee_role NOT NULL,
@@ -40,8 +46,8 @@ CREATE TABLE employee (
 );
 
 CREATE TABLE item_ingredient (
-    item_id INT NOT NULL REFERENCES Item(Item_ID) ON DELETE CASCADE,
-    ingredient_id INT NOT NULL REFERENCES Ingredient(Ingredient_ID) ON DELETE CASCADE,
+    item_id INT NOT NULL REFERENCES Items(Item_ID) ON DELETE CASCADE,
+    ingredient_id INT NOT NULL REFERENCES Ingredients(Ingredient_ID) ON DELETE CASCADE,
     quantity NUMERIC(10,2) NOT NULL CHECK (Quantity > 0),
     PRIMARY KEY (Item_ID, Ingredient_ID)
 );
