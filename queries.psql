@@ -55,7 +55,7 @@ WHERE item_id = 5678;
 
 -- Show ingredients that need reordering
 SELECT ingredient_name, stock_quantity, reorder_level
-FROM ingredient
+FROM ingredients
 WHERE stock_quantity < reorder_level;
 
 -- List all active employees that are managers
