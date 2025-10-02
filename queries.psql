@@ -53,7 +53,7 @@ UPDATE items
 SET price = 7.00
 WHERE item_id = 5678;
 
--- Show ingredients that need reordering
+-- Show ingredients that need reordering (showed off in demo)
 SELECT ingredient_name, stock_quantity, reorder_level
 FROM ingredients
 WHERE stock_quantity < reorder_level;
@@ -74,7 +74,7 @@ GROUP BY
 ORDER BY 
     week_start;
 
--- Special Query #2: "Realistic Sales History"
+-- Special Query #2: "Realistic Sales History" (showed off in demo)
 SELECT 
     DATE_TRUNC('hour', order_timestamp) AS hour_start,
     COUNT(*) AS order_count,
