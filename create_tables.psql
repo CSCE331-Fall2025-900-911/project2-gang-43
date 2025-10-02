@@ -1,4 +1,4 @@
-CREATE TYPE size_type AS ENUM ('large', 'medium', 'small');
+CREATE TYPE size_type AS ENUM ('Large', 'Medium', 'Small', 'Standard');
 CREATE TABLE Item (
     Item_ID SERIAL PRIMARY KEY,
     Name VARCHAR NOT NULL,
