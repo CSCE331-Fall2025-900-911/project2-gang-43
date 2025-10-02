@@ -61,6 +61,7 @@ WHERE stock_quantity < reorder_level;
 -- List all active employees that are managers
 SELECT employee_name, employee_id
 FROM employees
+<<<<<<< HEAD
 WHERE role = 'manager' AND active = TRUE;  
 
 
@@ -75,3 +76,41 @@ ORDER BY Order_Timestamp ASC;
 SELECT Order_Timestamp
 FROM orders
 ORDER BY Order_Timestamp DESC;
+=======
+WHERE role = 'manager' AND active = TRUE;
+
+-- Special Query #1: "Weekly Sales History"
+ SELECT 
+    DATE_TRUNC('week', order_timestamp) AS week_start,
+    COUNT(*) AS order_count
+FROM 
+    orders
+GROUP BY 
+    DATE_TRUNC('week', order_timestamp)
+ORDER BY 
+    week_start;
+
+-- Special Query #2: "Realistic Sales History"
+SELECT 
+    DATE_TRUNC('hour', order_timestamp) AS hour_start,
+    COUNT(*) AS order_count,
+    SUM(order_total) AS total_sales
+FROM 
+    orders
+GROUP BY 
+    DATE_TRUNC('hour', order_timestamp)
+ORDER BY 
+    hour_start;
+
+-- Special Query #3: "Peak Sales Day"
+SELECT 
+    DATE(order_timestamp) AS sales_day,
+    SUM(order_total) AS daily_total
+FROM 
+    orders
+GROUP BY 
+    DATE(order_timestamp)
+ORDER BY 
+    daily_total DESC
+LIMIT 10;
+>>>>>>> 2a4c23a32556487b74c8b62dd531844758aa3a44
