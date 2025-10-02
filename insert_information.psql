@@ -1,13 +1,13 @@
-TRUNCATE TABLE Order_Item CASCADE;
-TRUNCATE TABLE Item_Ingredient CASCADE;
-TRUNCATE TABLE Orders CASCADE;
-TRUNCATE TABLE Ingredient CASCADE;
-TRUNCATE TABLE Item CASCADE;
-TRUNCATE TABLE Employee CASCADE;
+TRUNCATE TABLE order_item CASCADE;
+TRUNCATE TABLE item_ingredient CASCADE;
+TRUNCATE TABLE orders CASCADE;
+TRUNCATE TABLE ingredients CASCADE;
+TRUNCATE TABLE items CASCADE;
+TRUNCATE TABLE employees CASCADE;
 
-\copy Employee(Employee_ID, Employee_Name, Role, Active) FROM 'csv/employee.csv' WITH (FORMAT csv, HEADER true);
-\copy Item(Item_ID, Name, Price, Available, Size) FROM 'csv/item.csv' WITH (FORMAT csv, HEADER true);
-\copy Ingredient(Ingredient_ID, Ingredient_Name, Stock_Quantity, Unit_Measurement, Reorder_Level) FROM 'csv/ingredient.csv' WITH (FORMAT csv, HEADER true);
-\copy Item_Ingredient(Item_ID, Ingredient_ID, Quantity) FROM 'csv/item_ingredient.csv' WITH (FORMAT csv, HEADER true);
-\copy Orders(Order_ID, Order_Timestamp, Order_Total) FROM 'csv/orders.csv' WITH (FORMAT csv, HEADER true);
-\copy Order_Item(Order_ID, Item_ID, Quantity, Item_Price) FROM 'csv/order_item.csv' WITH (FORMAT csv, HEADER true);
+\copy employees(Employee_ID, Employee_Name, Role, Active) FROM 'csv/employee.csv' WITH (FORMAT csv, HEADER true);
+\copy items(Item_ID, Name, Price, Available, Size) FROM 'csv/item.csv' WITH (FORMAT csv, HEADER true);
+\copy ingredients(Ingredient_ID, Ingredient_Name, Stock_Quantity, Unit_Measurement, Reorder_Level) FROM 'csv/ingredient.csv' WITH (FORMAT csv, HEADER true);
+\copy item_ingredient(Item_ID, Ingredient_ID, Quantity) FROM 'csv/item_ingredient.csv' WITH (FORMAT csv, HEADER true);
+\copy orders(Order_ID, Order_Timestamp, Order_Total) FROM 'csv/orders.csv' WITH (FORMAT csv, HEADER true);
+\copy order_item(Order_ID, Item_ID, Quantity, Item_Price) FROM 'csv/order_item.csv' WITH (FORMAT csv, HEADER true);
