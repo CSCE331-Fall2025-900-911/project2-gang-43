@@ -1,0 +1,54 @@
+-- Add new ingredients (new ingredient required)
+INSERT INTO ingredients (ingredient_id, ingredient_name, stock_quantity, unit_measurement, reorder_level)
+VALUES (99192, 'Fruit Tapioca', 20, 'Cups', 10);
+
+-- Add item (new item!)
+INSERT INTO items (item_id, name, price, available, size)
+VALUES (5678, 'Pumpkin Spice Milk Tea', 6.89, True, 'medium');
+
+-- Create new order (order placed)
+INSERT INTO orders (order_id, order_timestamp, order_total)
+VALUES (2126, '2021-01-21 17:38:00', 28.01);
+
+-- Add items to existing order
+INSERT INTO order_item (order_id, item_id, quantity, item_price)
+VALUES (2126, 5678, 2, 13.78);
+
+-- Change quantity of ordered items
+UPDATE order_item
+SET quantity = 1
+WHERE order_id = 2126 AND item_id = 5678;
+
+-- Decrement inventory (post-order)
+UPDATE ingredients
+SET stock_quantity = stock_quantity - 1
+WHERE ingredient_id = 99192;
+
+-- Increment inventory (shipment)
+UPDATE ingredients
+SET stock_quantity = stock_quantity + 100
+WHERE ingredient_id = 99192;
+
+-- Add employee (new hire)
+INSERT INTO employees (employee_id, employee_name, role, active)
+VALUES (67, 'Walter White', 'manager', TRUE);
+
+-- Remove employee (fired/left)
+UPDATE employees
+SET active = FALSE
+WHERE employee_id = 67;
+
+
+-- Delete existing order (cancel order)
+DELETE FROM orders
+WHERE order_id = 2126;
+
+-- Update item to be unavaliable (out of stock)
+UPDATE items
+SET available = FALSE
+WHERE item_id = 5678;
+
+-- Change price of item
+UPDATE items
+SET price = 7.00
+WHERE item_id = 5678;

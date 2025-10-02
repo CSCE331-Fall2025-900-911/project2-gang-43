@@ -13,6 +13,7 @@ CREATE TABLE items (
     price NUMERIC(10,2) NOT NULL,
     available BOOLEAN,
     size size_type NOT NULL
+
 );
 
 CREATE TABLE ingredients (
