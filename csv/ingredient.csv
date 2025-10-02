@@ -18,3 +18,7 @@ Ingredient_ID,Ingredient_Name,Stock_Quantity,Unit_Measurement,Reorder_Level
 17,Peach Syrup,500,ml,100
 18,Boba Pearls,1000,grams,200
 19,Sugar,2000,grams,500
+20,Cups,1000,cups,200
+21,Napkins,1000,napkins,200
+22,Straws,1000,straws,200
+23,labels,1000,labels,200
