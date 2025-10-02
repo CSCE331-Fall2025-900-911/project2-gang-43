@@ -2,7 +2,7 @@
 INSERT INTO ingredients (ingredient_id, ingredient_name, stock_quantity, unit_measurement, reorder_level)
 VALUES (99192, 'Fruit Tapioca', 20, 'Cups', 10);
 
--- Add item (new item!)
+-- Add item (new item!) (showed off in demo)
 INSERT INTO items (item_id, name, price, available, size)
 VALUES (5678, 'Pumpkin Spice Milk Tea', 6.89, True, 'medium');
 
@@ -58,7 +58,7 @@ SELECT ingredient_name, stock_quantity, reorder_level
 FROM ingredients
 WHERE stock_quantity < reorder_level;
 
--- List all active employees that are managers
+-- List all active employees that are managers (showed off in demo)
 SELECT employee_name, employee_id
 FROM employees
 WHERE role = 'manager' AND active = TRUE;  
@@ -78,7 +78,7 @@ FROM orders
 ORDER BY Order_Timestamp DESC;
 WHERE role = 'manager' AND active = TRUE;
 
--- Special Query #1: "Weekly Sales History"
+-- Special Query #1: "Weekly Sales History" (showed off in demo)
  SELECT 
     DATE_TRUNC('week', order_timestamp) AS week_start,
     COUNT(*) AS order_count
@@ -101,7 +101,7 @@ GROUP BY
 ORDER BY 
     hour_start;
 
--- Special Query #3: "Peak Sales Day"
+-- Special Query #3: "Peak Sales Day" (showed off in demo)
 SELECT 
     DATE(order_timestamp) AS sales_day,
     SUM(order_total) AS daily_total
