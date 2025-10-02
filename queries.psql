@@ -61,22 +61,21 @@ WHERE stock_quantity < reorder_level;
 -- List all active employees that are managers
 SELECT employee_name, employee_id
 FROM employees
-<<<<<<< HEAD
 WHERE role = 'manager' AND active = TRUE;  
 
-
--- Sum Prices
-SELECT SUM(Order_Total)
+-- used in demo, show sum of all sales
+SELECT SUM(Order_Total) 
 FROM orders
 
-SELECT Order_Timestamp
+-- Used in Demo, Show earliest order
+SELECT Order_Timestamp 
 FROM orders
 ORDER BY Order_Timestamp ASC;
 
-SELECT Order_Timestamp
+ -- Used in Demo, show latest order
+SELECT Order_Timestamp 
 FROM orders
 ORDER BY Order_Timestamp DESC;
-=======
 WHERE role = 'manager' AND active = TRUE;
 
 -- Special Query #1: "Weekly Sales History"
@@ -113,4 +112,3 @@ GROUP BY
 ORDER BY 
     daily_total DESC
 LIMIT 10;
->>>>>>> 2a4c23a32556487b74c8b62dd531844758aa3a44
