@@ -52,3 +52,13 @@ WHERE item_id = 5678;
 UPDATE items
 SET price = 7.00
 WHERE item_id = 5678;
+
+-- Show ingredients that need reordering
+SELECT ingredient_name, stock_quantity, reorder_level
+FROM ingredient
+WHERE stock_quantity < reorder_level;
+
+-- List all active employees that are managers
+SELECT employee_name, employee_id
+FROM employees
+WHERE role = 'manager' AND active = TRUE;
