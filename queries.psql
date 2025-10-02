@@ -31,7 +31,7 @@ WHERE ingredient_id = 99192;
 
 -- Add employee (new hire)
 INSERT INTO employees (employee_id, employee_name, role, active)
-VALUES (67, 'Walter White', 'manager', TRUE);
+VALUES (67, 'Walter White', 'manager', TRUE);   
 
 -- Remove employee (fired/left)
 UPDATE employees
@@ -61,4 +61,17 @@ WHERE stock_quantity < reorder_level;
 -- List all active employees that are managers
 SELECT employee_name, employee_id
 FROM employees
-WHERE role = 'manager' AND active = TRUE;
+WHERE role = 'manager' AND active = TRUE;  
+
+
+-- Sum Prices
+SELECT SUM(Order_Total)
+FROM orders
+
+SELECT Order_Timestamp
+FROM orders
+ORDER BY Order_Timestamp ASC;
+
+SELECT Order_Timestamp
+FROM orders
+ORDER BY Order_Timestamp DESC;
